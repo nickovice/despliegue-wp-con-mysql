@@ -1,0 +1,36 @@
+services:
+  wordpress:
+    build: .
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mysql_db
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: 123456
+      WORDPRESS_DB_NAME: test_db
+    volumes:
+      - wordpress:/var/www/html
+
+  mysql_db:
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: test_db
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    volumes:
+      - mysql_db:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+volumes:
+  wordpress:
+  mysql_db:
