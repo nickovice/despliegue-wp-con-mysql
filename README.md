@@ -1,5 +1,7 @@
 # Deploy de Wordpress y MySQL en Docker
-### Pasos para la instalación:  
+### IMPORTANTE: Los usuarios y contraseñas configurados son básicos, a modo de prueba. Se pueden cambiar modificando el archivo `docker-compose.yml`
+#### Pasos para la instalación:  
+
 *  Crear un nuevo directorio para trabajar.
 *  Descargar allí el archivo [docker-compose.yml](./docker-compose.yml).
 *  Abrir una terminal de comandos en dicho directorio y ejecutar `docker compose up -d`.
